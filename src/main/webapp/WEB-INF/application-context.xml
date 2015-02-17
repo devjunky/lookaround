@@ -50,22 +50,22 @@
     <mongo:repositories base-package="com.devjunky.lookaround.repository" />
 
     <!--Mongo Local settings -->
-    <beans:bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
+   <!-- <beans:bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
         <beans:property name="host" value="localhost" />
     </beans:bean>
 
     <beans:bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
         <beans:constructor-arg name="mongo" ref="mongo" />
         <beans:constructor-arg name="databaseName" value="DA11" />
-    </beans:bean>
+    </beans:bean>-->
 
 
     <!--Mongo Cloud settings -->
-<!--    <beans:bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
+    <beans:bean id="mongo" class="org.springframework.data.mongodb.core.MongoFactoryBean">
         <beans:property name="host" value="127.6.220.2" />
     </beans:bean>
 
-    &lt;!&ndash; MongoTemplate for connecting and quering the documents in the database &ndash;&gt;
+    <!-- MongoTemplate for connecting and quering the documents in the database -->
     <beans:bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
         <beans:constructor-arg name="mongo" ref="mongo" />
         <beans:constructor-arg name="databaseName" value="cars" />
@@ -75,7 +75,7 @@
     <beans:bean id="mongoCredentials" class="org.springframework.data.authentication.UserCredentials">
         <beans:constructor-arg name="username" value="apokhrel"/>
         <beans:constructor-arg name="password" value="nepal12"/>
-    </beans:bean>-->
+    </beans:bean>
 
     <!-- Use this post processor to translate any MongoExceptions thrown in @Repository annotated classes -->
     <beans:bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
