@@ -1,0 +1,55 @@
+<div class="container">
+    <h2>List an item.</h2>
+
+    <div class="well">
+        <form role="form" ng-submit="addProduct(userForm.$valid)" class="ng-scope ng-pristine ng-valid">
+            <div class="form-group">
+                <label>Product Name:</label>
+                <input type="text" class="form-control ng-pristine ng-valid" name="input"
+                       ng-model="newProduct.productName"
+                       required ng-trim="false" placeholder="Enter product name..">
+                <span class="error" ng-show="myForm.input.$error.required">
+                    Product Name Required!</span>
+                </br>
+                <label>Product Category:</label>
+                <input type="text" class="form-control ng-pristine ng-valid" name="input"
+                       ng-model="newProduct.category"
+                       required ng-trim="false" placeholder="Enter a Category..">
+                <span class="error" ng-show="myForm.input.$error.required">
+                    Category Required!</span>
+                </br>
+                <label>Product Location:</label>
+                <input type="text" class="form-control ng-pristine ng-valid" name="input"
+                       ng-model="newProduct.location"
+                       required ng-trim="false" placeholder="Enter product location..">
+                <span class="error" ng-show="myForm.input.$error.required">
+                    Location Required!</span>
+                </br>
+                <label>Price:</label>
+                <input type="number" class="form-control ng-pristine ng-valid" name="input"
+                       ng-model="newProduct.price"
+                       required ng-trim="false" placeholder="Enter price..">
+                <span class="error" ng-show="myForm.input.$error.required">
+                    Price Required!</span>
+                </br>
+
+                <label for="comment">Product Description:</label>
+                <textarea class="form-control ng-pristine ng-valid" ng-model="newProduct.productDescription"
+                          required ng-trim="false" placeholder="Enter product description.." rows="5"
+                          id="comment"></textarea>
+                <span class="error" ng-show="myForm.input.$error.required">
+                    Description Required!</span>
+            </div>
+
+
+            <p></p>
+            <hr>
+            <p></p>
+            <button type="submit" class="btn btn-primary">Add Item &raquo;</button>
+        </form>
+    </div>
+
+    <a href="#/home" class="btn btn-default">Go Back to Home Page</a>
+
+
+</div>

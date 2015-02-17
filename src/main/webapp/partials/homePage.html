@@ -1,0 +1,33 @@
+
+<div class="container">
+    <h2>List of Items.</h2>
+    <!-- BEGIN: Outer ngRepeat. -->
+    <div class="well">
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-4">
+                    <a href="#/addItem" class="btn btn-default"><span
+                            class="glyphicon glyphicon-plus"></span> New Item</a>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" placeholder="Search for an Item.."
+                           ng-model="filter.productName"/>
+                    {{productName}}
+                </div>
+            </div>
+        </div>
+
+        <p></p>
+        <hr>
+        <p></p>
+
+        <div class="row">
+            <ul>
+                <li ng-repeat="product in products | filter:filter.productName"><a
+                        href="#/product/{{product.id}}">{{product.productName}}</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
