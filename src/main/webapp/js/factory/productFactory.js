@@ -15,7 +15,7 @@ app.factory('productFactory', ['$http', function($http) {
     };
 
     productFactory.removeProduct = function (id) {
-        return $http.get(urlBase + '/remove/' + id)
+        return $http.delete(urlBase + '/remove/' + id)
     };
 
     productFactory.addProduct = function (product) {

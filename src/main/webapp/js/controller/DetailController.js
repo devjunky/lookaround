@@ -16,6 +16,20 @@ app.controller("detailController", function ($scope, $routeParams, $location, pr
             });
     }
 
+    $scope.deleteProduct = function () {
+        var id = $scope.product.id;
+        productFactory.removeProduct(id)
+            .success(function () {
+                $scope.status = 'Item has been successfully removed..';
+                $scope.newProduct = "";
+                $location.path('home');
+            }).
+            error(function (error) {
+                $scope.status = 'Unable to remove the entry: ' + error.message;
+            });
+
+    }
+
 });
 
 
